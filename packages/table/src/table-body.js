@@ -403,7 +403,7 @@ export default {
         // 使用二维数组，避免修改 $index
         return [[
           tr,
-          <tr key={'expanded-row__' + tr.key}>
+          <tr class="el-table__expanded-row" key={'expanded-row__' + tr.key}>
             <td colspan={ this.columnsCount } class="el-table__expanded-cell">
               { renderExpanded(this.$createElement, { row, $index, store: this.store }) }
             </td>
