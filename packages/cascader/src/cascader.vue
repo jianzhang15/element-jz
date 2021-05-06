@@ -9,7 +9,7 @@
     v-clickoutside="() => toggleDropDownVisible(false)"
     @mouseenter="inputHover = true"
     @mouseleave="inputHover = false"
-    @click="() => toggleDropDownVisible(readonly ? undefined : true)"
+    @click="() => toggleDropDownVisible()"
     @keydown="handleKeyDown">
 
     <el-input
@@ -397,6 +397,7 @@ export default {
 
       const { dropDownVisible } = this;
       const { input } = this.$refs;
+      console.log(visible);
       visible = isDef(visible) ? visible : !dropDownVisible;
       if (visible !== dropDownVisible) {
         this.dropDownVisible = visible;
