@@ -1,4 +1,4 @@
-import { arrayFindIndex } from 'element-ui/src/utils/util';
+import { arrayFindIndex, copy } from 'element-ui/src/utils/util';
 import { getCell, getColumnByCell, getRowIdentity } from './util';
 import { getStyle, hasClass, removeClass, addClass } from 'element-ui/src/utils/dom';
 import ElCheckbox from 'element-ui/packages/checkbox';
@@ -6,7 +6,6 @@ import ElTooltip from 'element-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';
-
 export default {
   name: 'ElTableBody',
 
@@ -306,6 +305,10 @@ export default {
       if (cell) {
         column = getColumnByCell(table, cell);
         if (column) {
+          if (name === 'dblclick') {
+            console.log('dblclick', row[column.property]);
+            copy(row[column.property]);
+          }
           table.$emit(`cell-${name}`, row, column, cell, event);
         }
       }

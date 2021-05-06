@@ -3,6 +3,23 @@ import { isString, isObject } from 'element-ui/src/utils/types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
+export function copy(text) {
+  // 创建input标签
+  var input = document.createElement('input');
+  // 将input的值设置为需要复制的内容
+  input.value = text;
+  // 添加input标签
+  document.body.appendChild(input);
+  // 选中input标签
+  input.select();
+  // 执行复制
+  document.execCommand('copy');
+  // 成功提示信息
+  Vue.prototype.$message.success('已成功复制：' + text);
+  // 移除input标签
+  document.body.removeChild(input);
+};
+
 export function noop() {};
 
 export function hasOwn(obj, key) {

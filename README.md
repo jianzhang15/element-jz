@@ -1,3 +1,8 @@
+## 2.15.4【2021年5月6日】
+el-table方法cell-dblclick方法新增复制功能，使用原生复制execCommand进行复制，不进行引用vue-clipboard2插件，调用顺序为L
+
+双击事件-》进行复制-》抛出cell-dblclick事件
+
 ## 2.15.3【2021年4月25日】
 el-table对于expandRow增加class=“el-table__expanded-row”方便做动画
 
