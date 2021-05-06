@@ -1,3 +1,6 @@
+## 2.15.6【2021年5月6日】
+el-cascader级联选择器开启了filterable可搜索之后，二次点击无法收回下拉框的问题
+
 ## 2.15.5【2021年5月6日】
 el-table方法cell-dblclick方法修改为取event.target.innerText，取字段原生的值因为经常格式化，导致复制的不正确
 
