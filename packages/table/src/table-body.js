@@ -306,8 +306,7 @@ export default {
         column = getColumnByCell(table, cell);
         if (column) {
           if (name === 'dblclick') {
-            console.log('dblclick', row[column.property]);
-            copy(row[column.property]);
+            copy(event.target.innerText);
           }
           table.$emit(`cell-${name}`, row, column, cell, event);
         }

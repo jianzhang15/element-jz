@@ -1,5 +1,8 @@
+## 2.15.5【2021年5月6日】
+el-table方法cell-dblclick方法修改为取event.target.innerText，取字段原生的值因为经常格式化，导致复制的不正确
+
 ## 2.15.4【2021年5月6日】
-el-table方法cell-dblclick方法新增复制功能，使用原生复制execCommand进行复制，不进行引用vue-clipboard2插件，调用顺序为L
+el-table方法cell-dblclick方法新增复制功能，使用原生复制execCommand进行复制，不进行引用vue-clipboard2插件，调用顺序为:
 
 双击事件-》进行复制-》抛出cell-dblclick事件
 
