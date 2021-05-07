@@ -397,7 +397,6 @@ export default {
 
       const { dropDownVisible } = this;
       const { input } = this.$refs;
-      console.log(visible);
       visible = isDef(visible) ? visible : !dropDownVisible;
       if (visible !== dropDownVisible) {
         this.dropDownVisible = visible;
