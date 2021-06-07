@@ -197,9 +197,9 @@
           this.rootMenu.openMenu(this.index, this.indexPath);
         }, showTimeout);
 
-        if (this.appendToBody) {
-          this.$parent.$el.dispatchEvent(new MouseEvent('mouseenter'));
-        }
+        // if (this.appendToBody) {
+        //   this.$parent.$el.dispatchEvent(new MouseEvent('mouseenter'));
+        // }
       },
       handleMouseleave(deepDispatch = false) {
         const {rootMenu} = this;
