@@ -1,3 +1,6 @@
+## 2.16.2【2021年7月27日】
+修复el-checkbox参与min设置的情况下is-disabled和is-checked并存的样式冲突问题
+
 ## 2.16.1【2021年7月22日】
 解决el-checkbox多选的情况下样式错乱由于is-focus导致的问题
 
