@@ -1,21 +1,36 @@
 <template>
-  <div>
-    <el-checkbox-group v-model="checkboxGroup1" :min="1">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{
-        city
-      }}</el-checkbox-button>
-    </el-checkbox-group>
-  </div>
+  <el-table
+        ref="table"
+        class="table-fixed"
+        border
+        :data="[]"
+        row-key="sampleId"
+      >
+        <el-table-column
+          type="selection"
+          width="50"
+          align="center"
+          fixed="left"
+          reserve-selection
+        />
+        <el-table-column :label="'test'" align="center"/>
+        <template v-for="(column, index) in columns">
+          <el-table-column :label="''+column" align="center" :key="index"/>
+        </template>
+      </el-table>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      checkboxGroup1: ["上海"],
-      checkedCities: [],
-      cities: ["上海", "北京", "广州", "深圳"],
+      columns:[]
     };
   },
+  mounted(){
+    setTimeout(() => {
+      this.columns=[1,2,3]
+    }, 1000);
+  }
 };
 </script>

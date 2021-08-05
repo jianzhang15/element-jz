@@ -1,5 +1,6 @@
 <template>
-  <div class="el-table"
+  <div
+    class="el-table"
     :class="[{
       'el-table--fit': fit,
       'el-table--striped': stripe,
@@ -10,7 +11,8 @@
       'el-table--scrollable-x': layout.scrollX,
       'el-table--scrollable-y': layout.scrollY,
       'el-table--enable-row-hover': !store.states.isComplex,
-      'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+      'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100,
+      'noColumn':columnsCount<=1
     }, tableSize ? `el-table--${ tableSize }` : '']"
     @mouseleave="handleMouseLeave($event)">
     <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
@@ -581,7 +583,8 @@
         columns: 'columns',
         tableData: 'data',
         fixedColumns: 'fixedColumns',
-        rightFixedColumns: 'rightFixedColumns'
+        rightFixedColumns: 'rightFixedColumns',
+        columnsCount: states => states.columns.length
       })
     },
 

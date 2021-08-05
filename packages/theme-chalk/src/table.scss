@@ -14,7 +14,11 @@
   background-color: $--color-white;
   font-size: 14px;
   color: $--table-font-color;
-
+  transition: opacity 0.5s ease;
+  // 列表为空
+  &.noColumn{
+    opacity: 0;
+  }
   // 数据为空
   @include e(empty-block) {
     min-height: 60px;
