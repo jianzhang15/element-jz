@@ -1,36 +1,33 @@
 <template>
-  <el-table
-        ref="table"
-        class="table-fixed"
-        border
-        :data="[]"
-        row-key="sampleId"
-      >
-        <el-table-column
-          type="selection"
-          width="50"
-          align="center"
-          fixed="left"
-          reserve-selection
-        />
-        <el-table-column :label="'test'" align="center"/>
-        <template v-for="(column, index) in columns">
-          <el-table-column :label="''+column" align="center" :key="index"/>
-        </template>
-      </el-table>
+  <div>
+    <el-button type="text" @click="dialogVisible = true"
+      >点击打开 Dialog</el-button
+    >
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose"
+    >
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false"
+          >确 定</el-button
+        >
+      </span>
+    </el-dialog>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      columns:[]
+      dialogVisible: false,
     };
   },
-  mounted(){
-    setTimeout(() => {
-      this.columns=[1,2,3]
-    }, 1000);
-  }
+  mounted() {
+  },
 };
 </script>
