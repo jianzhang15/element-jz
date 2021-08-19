@@ -1,33 +1,41 @@
 <template>
-  <div>
-    <el-button type="text" @click="dialogVisible = true"
-      >点击打开 Dialog</el-button
-    >
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleClose"
-    >
-      <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
-          >确 定</el-button
+  <el-table :data="tableData">
+    <el-table-column prop="date" label="日期" width="180"> </el-table-column>
+    <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
+    <el-table-column prop="address" label="地址" width="120"  show-overflow-tooltip>
+      <template slot-scope="scope">
+        <div
+          class="pointer"
         >
-      </span>
-    </el-dialog>
-  </div>
+          <div>
+            <span>检材名称：</span>
+            <span
+              v-text="scope.row.address || '-'"
+              class="primary-color"
+            ></span>
+          </div>
+          <div class="font12">
+            检材编号：{{ scope.row.address || "-" }}
+          </div>
+        </div>
+      </template>
+    </el-table-column>
+  </el-table>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      dialogVisible: false,
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+      ],
     };
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
