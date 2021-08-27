@@ -3,8 +3,9 @@ import { isString, isObject } from 'element-ui/src/utils/types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
-export function copy(text) {
+export function copy(text, html) {
   if (!text) return false;
+  if (html.indexOf('el-link') !== -1 || html.indexOf('el-button') !== -1) return false;
   // 创建input标签
   var input = document.createElement('input');
   // 将input的值设置为需要复制的内容

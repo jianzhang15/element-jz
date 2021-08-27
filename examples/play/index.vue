@@ -2,22 +2,21 @@
   <el-table :data="tableData">
     <el-table-column prop="date" label="日期" width="180"> </el-table-column>
     <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
-    <el-table-column prop="address" label="地址" width="120"  show-overflow-tooltip>
+    <el-table-column label="操作" width="120">
       <template slot-scope="scope">
-        <div
-          class="pointer"
+       <el-link
+          :underline="false"
+          type="text"
         >
-          <div>
-            <span>检材名称：</span>
-            <span
-              v-text="scope.row.address || '-'"
-              class="primary-color"
-            ></span>
-          </div>
-          <div class="font12">
-            检材编号：{{ scope.row.address || "-" }}
-          </div>
-        </div>
+          查看详情
+        </el-link>
+        <el-link
+          class='ml2'
+          :underline="false"
+          type="primary"
+        >
+          刷新
+        </el-link>
       </template>
     </el-table-column>
   </el-table>
@@ -30,8 +29,7 @@ export default {
       tableData: [
         {
           date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄",
+          name: "王小虎"
         },
       ],
     };
